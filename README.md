@@ -7,10 +7,7 @@ terraform version:
 $ terraform.exe --version
 Terraform v1.3.7
 on windows_amd64
-+ provider registry.terraform.io/hashicorp/aws v3.76.0
-+ provider registry.terraform.io/hashicorp/http v3.2.1
-+ provider registry.terraform.io/hashicorp/null v3.2.1
-+ provider registry.terraform.io/hashicorp/tls v4.0.4
+
 
 Shell: git-bash -> C:\\Program Files\\Git\\git-bash.exe", "-c
 
@@ -44,6 +41,5 @@ $ echo $HOME
 
 *You might have to change variable.tf. For example, if we want to add other clusters on the same vpc network, then change the cluster-name eithger by edit variable.tf or add command line option like "terraform plan -var "cluster-name=wanted-name" and "terraform apply"
 For example,addons, aws region, eks cluster name, addons list.
-
 
 ```
