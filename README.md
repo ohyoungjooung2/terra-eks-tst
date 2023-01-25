@@ -177,6 +177,84 @@ aws_vpc.dev-vpc: Creating...
 aws_cloudwatch_log_group.tst-eks: Creation complete after 0s [
 ......
 
+null_resource.crt-sa-account: Creating...
+null_resource.crt-sa-account: Provisioning with 'local-exec'...
+null_resource.crt-sa-account (local-exec): Executing: ["C:\\Program Files\\Git\\git-bash.exe" "-c" "c:\\Users\\ohyou/bin/kubectl apply -f aws-load-ban-sa.yaml"]
+null_resource.crt-sa-account: Creation complete after 0s [id=6412554255157381358]
+null_resource.alb-yml-execute (local-exec): Updated context arn:aws:eks:ap-northeast-2:494307375889:cluster/tst-eks in C:\Users\ohyou\.kube\config
+null_resource.alb-yml-execute: Creation complete after 1s [id=4458723972934890591]
+aws_eks_addon.tst-eks-addon["coredns"]: Creation complete after 8s [id=tst-eks:coredns]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [10s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [20s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [30s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [40s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [50s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Still creating... [1m0s elapsed]
+aws_eks_addon.tst-eks-addon["vpc-cni"]: Creation complete after 1m6s [id=tst-eks:vpc-cni]
+
+Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+endpoint = "https://E1F3FE780F1212A8C2178575023B7C83.gr7.ap-northeast-2.eks.amazonaws.com"
+instance_ip_addr = "43.200.254.156"
+kubeconfig-certificate-authority-data = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1ERXlOVEE0TVRJeE1Wb1hEVE16TURFeU1qQTRNVEl4TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT1hsCnoxYnhlNVorT1k5N0R2N3pLUE5DNHNDb3J5WHhZWW9Zc2pqUUxKVFpCeVZCK0tNWUZ0RnZneEg0Rzg5QWpZUGMKdi9RVlZaSnRvcFpKYytuZ1N0YTlBSllOdWkwTERlVDRhOHJKZFVPb1AwdHZFcnVqckhoZWNTdndqcDlZTEtiZQpDRFJRM0FreVA4akJ4UVljZkFFQ0RaRHBCZDFmdFVkNzVrYnZRcU1Lc0c1N3ZNeWFxRXdpbzlxdVZPUzRDRGlnCkRjMThFMnVubk5oRUZkYnMxOXpsdnBOTmNTTmhBNFJMQmdCMi9kUjlRT2JEdnhXVWp6WWhVKy9CSklxRUhDTmwKWE04WlluWkZPbnl4ZTdvSUNueUpFOTM0b0xDS0RYZ090Z2owNGVuZkFObzd4QVBsSkZ0UUxXNFZoV0FkOGpIYwpRSlliQ2l0ZEZJNTN5YUR0RE5VQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZGaEpkNk5pM0tnR1NRR0FjTGYzblIxdDA5eWpNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSjVoTzhmSDFxc2I1WnBDbThNUwpqR0RjUDVYeTlTb0JZZnlDeUl0ZmRpbnpPcFFrTEtYbG5xNm9QRjhjTXlGOEczUW8vemlScm5WSUFERU5uMUY5CjNiZGZFUloxOVNPOG5sYU9mUHlpTkQwSThDOWhKUW9ycGtoUmZwWWlxc08yTGJiclhJcnNUek5OakhqeStnR2YKQjhhZVBMTjlMZmhTT2x1V2RMM1AyZDZpZDdtZUJ4REZnQlo0REQ5ZFQ3OGZyZmk2OGo3U1lwWXNhelhZakd6awpwTmRqR3RKY1RSUDBKWlJIbjV2Z1NEdkR6NE1STzZWUERVRWwxSlhqT29naDRrSWt1S2Z0TXVvdVF2czBRVG9DCjhOeW55a1UzNlFrbGVmRWlvSW9ZbTJ2VmpBTkZqUVB5bVp3Y0M1dDgzckQ2S2JPQ24vckowNURBNGl3M294UlkKUmJZPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+
+#To confirm.(Only two node is enough for dev I suppose, but somtimes need more nodes..:))
+$ kubectl.exe get no -o wide
+NAME                                            STATUS   ROLES    AGE     VERSION               INTERNAL-IP   EXTERNAL-IP   OS-IMAGE         KERNEL-VERSION                 CONTAINER-RUNTIME
+ip-10-0-2-213.ap-northeast-2.compute.internal   Ready    <none>   5m30s   v1.24.7-eks-fb459a0   10.0.2.213    <none>        Amazon Linux 2   5.4.226-129.415.amzn2.x86_64   containerd://1.6.6
+ip-10-0-3-88.ap-northeast-2.compute.internal    Ready    <none>   5m35s   v1.24.7-eks-fb459a0   10.0.3.88     <none>        Amazon Linux 2   5.4.226-129.415.amzn2.x86_64   containerd://1.6.6
+
+$ kubectl.exe get po -n kube-system
+NAME                      READY   STATUS    RESTARTS   AGE
+aws-node-622nb            1/1     Running   0          5m21s
+aws-node-82wmk            1/1     Running   0          5m45s
+coredns-dc4979556-46zv6   1/1     Running   0          11m
+coredns-dc4979556-ndg2t   1/1     Running   0          11m
+kube-proxy-rc4p5          1/1     Running   0          6m34s
+kube-proxy-z5lbm          1/1     Running   0          6m29s
+
+...
+And it is OK...:) to apply pod and etc.
+
+$ kubectl apply -f https://k8s.io/examples/application/deployment-scale.yaml
+deployment.apps/nginx-deployment created
+
+$ kubectl.exe get po
+NAME                               READY   STATUS    RESTARTS   AGE
+nginx-deployment-66b957f9d-295f5   1/1     Running   0          33s
+nginx-deployment-66b957f9d-7t896   1/1     Running   0          33s
+nginx-deployment-66b957f9d-gssfp   1/1     Running   0          33s
+nginx-deployment-66b957f9d-rhvb8   1/1     Running   0          33s
+
+$ kubectl.exe port-forward nginx-deployment-66b957f9d-rhvb8 3333:80
+Forwarding from 127.0.0.1:3333 -> 80
+Forwarding from [::1]:3333 -> 80
+
+#From other terminal
+$ curl http://localhost:3333
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612  100   612    0     0  12768      0 --:--:-- --:--:-- --:--:-- 13021<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
 
 
 ```
+
+
+*Good Luck*
