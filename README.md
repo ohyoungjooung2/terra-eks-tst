@@ -29,6 +29,15 @@ $ aws eks list-clusters
 Help: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
       https://aws.amazon.com/free/?nc1=h_ls&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
            
+$ which kubectl
+/c/Users/ohyou/bin/kubectl
+
+#Also kubectl is necessary to check eks cluster.
+oyj@homeoyj MINGW64 ~/
+$ kubectl.exe version
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"26", GitVersion:"v1.26.0", GitCommit:"b46a3f887ca979b1a5d14fd39cb1af43e7e5d12d", GitTreeState:"clean", BuildDate:"2022-12-08T19:58:30Z", GoVersion:"go1.19.4", Compiler:"gc", Platform:"windows/amd64"}
+Kustomize Version: v4.5.7
 
 ```
 
@@ -44,7 +53,7 @@ For example,addons, aws region, eks cluster name, addons list.
 
 ```
 
-#Example
+#Example-terraform init(initialize)
 ```
 oyj@homeoyj MINGW64 ~
 $ mkdir aws-eks-terraform
@@ -100,7 +109,44 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 
+```
 
+#Examples terraform plan and apply
 
+```
+$ terraform.exe plan -var "home_dir=c:\Users\ohyou"
+ ...................
+ # aws_vpc.dev-vpc will be created
+  + resource "aws_vpc" "dev-vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_classiclink                   = (known after apply)
+      + enable_classiclink_dns_support       = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name"                                     = "terraform-dev-node"
+          + "kubernetes.io/cluster/{var.cluster-name}" = "owned"
+        }
+      + tags_all                             = {
+          + "Name"                                     = "terraform-dev-node"
+          + "kubernetes.io/cluster/{var.cluster-name}" = "owned"
+        }
+    }
+
+  # null_resource.alb-yml-execute will be created
+  + resource "null_resource" "alb-yml-execute" {
+      + id = (known after apply)
 
 ```
