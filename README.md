@@ -31,7 +31,19 @@ $ aws eks list-clusters
 }
 Help: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
       https://aws.amazon.com/free/?nc1=h_ls&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
-      
-      
+           
+
+```
+
+#Variables
+```
+To create a instance, (we) need a ssh key thas is located in the $HOME(%HOME%-windows) directory.
+#Git bash example(it is same as windows %HOME%)
+$ echo $HOME
+/c/Users/ohyou
+
+*You might have to change variable.tf. For example, if we want to add other clusters on the same vpc network, then change the cluster-name eithger by edit variable.tf or add command line option like "terraform plan -var "cluster-name=wanted-name" and "terraform apply"
+For example,addons, aws region, eks cluster name, addons list.
+
 
 ```
