@@ -43,3 +43,64 @@ $ echo $HOME
 For example,addons, aws region, eks cluster name, addons list.
 
 ```
+
+#Example
+```
+oyj@homeoyj MINGW64 ~
+$ mkdir aws-eks-terraform
+
+oyj@homeoyj MINGW64 ~
+$ cd aws-eks-terraform/
+
+oyj@homeoyj MINGW64 ~/aws-eks-terraform
+$ git clone git@github.com:ohyoungjooung2/terra-eks-tst.git
+Cloning into 'terra-eks-tst'...
+remote: Enumerating objects: 176, done.
+remote: Counting objects: 100% (176/176), done.
+remote: Compressing objects: 100% (141/141), done.
+remote: Total 176 (delta 22), reused 157 (delta 12), pack-reused 0
+Receiving objects: 100% (176/176), 1.67 MiB | 1.02 MiB/s, done.
+Resolving deltas: 100% (22/22), done.
+
+
+oyj@homeoyj MINGW64 ~/aws-eks-terraform
+$ cd terra-eks-tst/
+
+oyj@homeoyj MINGW64 ~/aws-eks-terraform/terra-eks-tst (main)
+$ terraform.exe init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding latest version of hashicorp/null...
+- Finding latest version of hashicorp/tls...
+- Finding latest version of hashicorp/http...
+- Finding hashicorp/aws versions matching "~> 3.72"...
+- Installing hashicorp/tls v4.0.4...
+- Installed hashicorp/tls v4.0.4 (signed by HashiCorp)
+- Installing hashicorp/http v3.2.1...
+- Installed hashicorp/http v3.2.1 (signed by HashiCorp)
+- Installing hashicorp/aws v3.76.1...
+- Installed hashicorp/aws v3.76.1 (signed by HashiCorp)
+- Installing hashicorp/null v3.2.1...
+- Installed hashicorp/null v3.2.1 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+
+
+
+```
