@@ -18,3 +18,20 @@ Linux nat instance instead of NAT, cause on development, nat instance enough and
 
 
 ```
+
+#Prerequsites
+```
+Aws authentication setup.(of course, aws account is a must.
+$ aws --version
+aws-cli/2.9.13 Python/3.9.11 Windows/10 exe/AMD64 prompt/off
+#Check eks env.
+$ aws eks list-clusters
+{
+    "clusters": []
+}
+Help: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+      https://aws.amazon.com/free/?nc1=h_ls&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+      
+      
+
+```
