@@ -256,5 +256,50 @@ working. Further configuration is required.</p>
 
 ```
 
+#Destroy cluster with terraform.
+```
+$ terraform.exe destroy -auto-approve  -var "home_dir=c:\Users\ohyou"
+...........................................................
+aws_eks_node_group.tst-eks-node-grp: Still destroying... [id=tst-eks:tst-eks-node-grp1, 8m10s elapsed]
+aws_eks_node_group.tst-eks-node-grp: Destruction complete after 8m14s
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEKS_CNI_Policy: Destroying... [id=eks-node-group-tst-eks-iam-for-node-20230125080630895600000006]
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEC2ContainerRegistryReadOnly: Destroying... [id=eks-node-group-tst-eks-iam-for-node-20230125080630895600000005]
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEKSWorkerNodePolicy: Destroying... [id=eks-node-group-tst-eks-iam-for-node-20230125080630895600000004]
+aws_security_group.eks_node_sg: Destroying... [id=sg-0a93accc0baf81b51]
+aws_eks_cluster.tst-eks: Destroying... [id=tst-eks]
+aws_security_group.eks_node_sg: Destruction complete after 1s
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEKS_CNI_Policy: Destruction complete after 1s
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEKSWorkerNodePolicy: Destruction complete after 1s
+aws_iam_role_policy_attachment.tst-eks-iam-for-node-AmazonEC2ContainerRegistryReadOnly: Destruction complete after 1s
+aws_iam_role.tst-eks-iam-for-node: Destroying... [id=eks-node-group-tst-eks-iam-for-node]
+aws_iam_role.tst-eks-iam-for-node: Destruction complete after 3s
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 10s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 20s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 30s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 40s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 50s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 1m0s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 1m10s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 1m20s elapsed]
+aws_eks_cluster.tst-eks: Still destroying... [id=tst-eks, 1m30s elapsed]
+aws_eks_cluster.tst-eks: Destruction complete after 1m35s
+aws_iam_role_policy_attachment.tst-eks-AmazonEKSVPCResourceController: Destroying... [id=eks-cluster-tst-eks-20230125080630895600000003]
+aws_iam_role_policy_attachment.tst-eks-AmazonEKSClusterPolicy: Destroying... [id=eks-cluster-tst-eks-20230125080630850300000002]
+aws_cloudwatch_log_group.tst-eks: Destroying... [id=/aws/eks/tst-eks/cluster]
+aws_subnet.tst-eks1: Destroying... [id=subnet-0575e0d0892088fec]
+aws_subnet.tst-eks2: Destroying... [id=subnet-01f6d3b9e6b7bce0d]
+aws_security_group.eks_sg: Destroying... [id=sg-08b2358fb2b1ff026]
+aws_cloudwatch_log_group.tst-eks: Destruction complete after 0s
+aws_subnet.tst-eks1: Destruction complete after 0s
+aws_subnet.tst-eks2: Destruction complete after 1s
+aws_security_group.eks_sg: Destruction complete after 1s
+aws_vpc.dev-vpc: Destroying... [id=vpc-016e77f8156ee528d]
+aws_iam_role_policy_attachment.tst-eks-AmazonEKSClusterPolicy: Destruction complete after 1s
+aws_iam_role_policy_attachment.tst-eks-AmazonEKSVPCResourceController: Destruction complete after 1s
+aws_iam_role.tst-eks: Destroying... [id=eks-cluster-tst-eks]
+aws_vpc.dev-vpc: Destruction complete after 0s
+aws_iam_role.tst-eks: Destruction complete after 3s
+
+```
 
 *Good Luck*
