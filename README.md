@@ -111,7 +111,7 @@ commands will detect it and remind you to do so if necessary.
 
 ```
 
-#Examples terraform plan and apply
+#Examples terraform plan 
 
 ```
 $ terraform.exe plan -var "home_dir=c:\Users\ohyou"
@@ -148,5 +148,35 @@ $ terraform.exe plan -var "home_dir=c:\Users\ohyou"
   # null_resource.alb-yml-execute will be created
   + resource "null_resource" "alb-yml-execute" {
       + id = (known after apply)
+
+```
+
+#Examples terraform apply
+
+```
+$ terraform.exe apply  -var "home_dir=c:\Users\ohyou"
+.....other output is cut out cause it is too long.....
+Changes to Outputs:
+  + endpoint                              = (known after apply)
+  + instance_ip_addr                      = (known after apply)
+  + kubeconfig-certificate-authority-data = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+
+aws_iam_policy.alb-role-policy: Creating...
+aws_key_pair.dev_pub: Creating...
+aws_cloudwatch_log_group.tst-eks: Creating...
+aws_iam_role.tst-eks: Creating...
+aws_iam_role.tst-eks-iam-for-node: Creating...
+aws_vpc.dev-vpc: Creating...
+aws_cloudwatch_log_group.tst-eks: Creation complete after 0s [
+......
+
+
 
 ```
