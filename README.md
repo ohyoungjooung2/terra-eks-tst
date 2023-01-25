@@ -18,7 +18,7 @@ Linux nat instance instead of NAT, cause on development, nat instance enough and
 
 #Prerequsites
 ```
-Aws authentication setup.(of course, aws account is a must.
+Aws authentication setup.(of course, aws account is a must)
 $ aws --version
 aws-cli/2.9.13 Python/3.9.11 Windows/10 exe/AMD64 prompt/off
 #Check eks env.
